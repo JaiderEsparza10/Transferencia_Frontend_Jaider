@@ -14,6 +14,33 @@
             <p class="header__subtitle">Practica la manipulación del DOM en tiempo real</p>
         </header>
 
+
+        
+
+        <section class="form-section">
+            <div class="card">
+                <h2 class="card__title">1. Identificación del Usuario</h2>
+                <form id="searchForm" class="form">
+                    <div class="form__group">
+                        <label for="userDoc" class="form__label">Documento del Usuario</label>
+                        <input type="text" id="userDoc" class="form__input" placeholder="Ej: 10101" required>
+                        <span class="form__error" id="searchError"></span>
+                    </div>
+                    <button type="submit" class="btn btn--primary" id="searchBtn">
+                        <span class="btn__text">Buscar Usuario</span>
+                    </button>
+                </form>
+
+                <div id="userInfo" class="user-info hidden">
+                    <div class="user-info__content">
+                        <p><strong>Nombre:</strong> <span id="infoNombre"></span></p>
+                        <p><strong>Correo:</strong> <span id="infoCorreo"></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
         <!-- Formulario de entrada -->
         <section class="form-section">
             <div class="card">
@@ -21,14 +48,14 @@
                 
                 <form id="messageForm" class="form" novalidate>
                     <div class="form__group">
-                        <label for="userName" class="form__label">
-                            Nombre de usuario
+                        <label for="usertarea" class="form__label">
+                            Titulo de la tarea
                         </label>
                         <input 
                             type="text" 
-                            id="userName" 
+                            id="usertarea" 
                             class="form__input" 
-                            placeholder="Ingresa tu nombre"
+                            placeholder="Ingrese el titulo de la tarea"
                             aria-required="true"
                         >
                         <span class="form__error" id="userNameError"></span>
@@ -36,17 +63,45 @@
 
                     <div class="form__group">
                         <label for="userMessage" class="form__label">
-                            Tu mensaje
+                            Descripcion de la tarea
                         </label>
                         <textarea 
                             id="userMessage" 
                             class="form__input form__textarea" 
-                            placeholder="Escribe tu mensaje aquí..."
+                            placeholder="Escribe el nombre de tu tarea..."
                             rows="4"
                             aria-required="true"
                         ></textarea>
                         <span class="form__error" id="userMessageError"></span>
                     </div>
+
+                    <div class="form__group">
+                        <label for="taskStatus" class="form__label">
+                            Estado de la tarea
+                        </label>
+                        <select id="taskStatus" class="form__input">
+                            
+                            <option value="" disabled selected>Selecciona el estado</option>
+                            <option value="En proceso">En proceso</option>
+                            <option value="En listado">En listado</option>
+                            <option value="Terminado">Terminado</option>
+                        </select>
+                    </div>
+
+                        <div class="form__group">   
+                            <label for="taskPriority" class="form__label">
+                                Prioridad
+                            </label>
+                            <select  id="taskPriority" class="form__input">
+                                <option value="" disabled selected>Selecciona la prioridad</option>
+                                <option value="Alta">Alta</option>
+                                <option value="Media">Media</option>
+                                <option value="Baja">Baja</option>
+                            </select>
+                        </div>
+
+
+                    
 
                     <button type="submit" class="btn btn--primary" id="submitBtn">
                         <span class="btn__text">Agregar Mensaje</span>
@@ -59,12 +114,12 @@
         <!-- Área de mensajes -->
         <section class="messages-section">
             <div class="messages-header">
-                <h2 class="messages-header__title">Mensajes Publicados</h2>
-                <span class="messages-header__count" id="messageCount">0 mensajes</span>
+                <h2 class="messages-header__title">Tareas del usuario</h2>
+                <span class="messages-header__count" id="messageCount">0 Tareas</span>
             </div>
             
             <div id="messagesContainer" class="messages-container">
-                <!-- Los mensajes se agregarán aquí dinámicamente -->
+                <!-- Los mensajes se agregarán aquí dinámicamente --> 
                 <div class="messages-empty" id="emptyState">
                     <svg class="messages-empty__icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
