@@ -14,10 +14,6 @@
             <h1 class="header__title">Registro de Mensajes</h1>
             <p class="header__subtitle">Practica la manipulación del DOM en tiempo real</p>
         </header>
-
-
-        
-
         <section class="form-section">
             <div class="card">
                 <h2 class="card__title">1. Identificación del Usuario</h2>
@@ -40,30 +36,19 @@
                 </div>
             </div>
         </section>
-
-
         <!-- Formulario de entrada -->
     <div id="taskSection" class="hidden">
         <section class="form-section">
             <div class="card">
                 <h2 class="card__title">Nuevo Mensaje</h2>
-                
                 <form id="messageForm" class="form" novalidate>
                     <div class="form__group">
                         <label for="usertarea" class="form__label">
                             Titulo de la tarea
                         </label>
-                        <input 
-                            type="text" 
-                            id="usertarea" 
-                            name="usertarea"
-                            class="form__input" 
-                            placeholder="Ingrese el titulo de la tarea"
-                            aria-required="true"
-                        >
+                        <input type="text" id="usertarea" name="usertarea" class="form__input" placeholder="Ingrese el titulo de la tarea" aria-required="true">
                         <span class="form__error" id="userNameError"></span>
                     </div>
-
                     <div class="form__group">
                         <label for="userMessage" class="form__label">
                             Descripcion de la tarea
@@ -78,13 +63,11 @@
                         ></textarea>
                         <span class="form__error" id="userMessageError"></span>
                     </div>
-
                     <div class="form__group">
                         <label for="taskStatus" class="form__label">
                             Estado de la tarea
                         </label>
                         <select id="taskStatus" name="taskStatus" class="form__input">
-                            
                             <option value="" disabled selected>Selecciona el estado</option>
                             <option value="En proceso">En proceso</option>
                             <option value="En listado">En listado</option>
@@ -92,7 +75,6 @@
                         </select>
                         <span class="form__error" id="taskStatusError"></span>
                     </div>
-
                         <div class="form__group">   
                             <label for="taskPriority" class="form__label">
                                 Prioridad
@@ -105,10 +87,6 @@
                             </select>
                             <span class="form__error" id="taskPriorityError"></span>
                         </div>
-
-
-                    
-
                     <button type="submit" class="btn btn--primary" id="submitBtn">
                         <span class="btn__text">Agregar Mensaje</span>
                         <span class="btn__icon">➤</span>
@@ -116,15 +94,12 @@
                 </form>
             </div>
         </section>
-    
-
         <!-- Área de mensajes -->
         <section class="messages-section">
             <div class="messages-header">
                 <h2 class="messages-header__title">Tareas del usuario</h2>
                 <span class="messages-header__count" id="messageCount">0 Tareas</span>
             </div>
-            
             <div id="messagesContainer" class="messages-container">
                 <!-- Los mensajes se agregarán aquí dinámicamente --> 
                 <div class="messages-empty" id="emptyState">
@@ -137,12 +112,11 @@
             </div>
         </section>
     </div>
-
         <!-- Footer informativo -->
         <footer class="footer">
             <p class="footer__text">Ejercicio de manipulación del DOM | SENA - Desarrollo Web</p>
         </footer>
 
-    <script type="module" src="script.js"></script>
+    <script type="module" src="JS/main.js"></script>
 </body>
 </html>
