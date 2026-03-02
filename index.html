@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Mensajes - Ejercicio DOM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado principal -->
+        <header class="header">
+            <h1 class="header__title">Registro de Mensajes</h1>
+            <p class="header__subtitle">Practica la manipulación del DOM en tiempo real</p>
+        </header>
+        <section class="form-section">
+            <div class="card">
+                <h2 class="card__title">1. Identificación del Usuario</h2>
+                <form id="searchForm" class="form">
+                    <div class="form__group">
+                        <label for="userDoc" class="form__label">Documento del Usuario</label>
+                        <input type="text" id="userDoc" name="documento" class="form__input" placeholder="Ej: 10101" required>
+                        <span class="form__error" id="searchError"></span>
+                    </div>
+                    <button type="submit" class="btn btn--primary" id="searchBtn">
+                        <span class="btn__text">Buscar Usuario</span>
+                    </button>
+                </form>
+
+                <div id="userInfo" class="user-info hidden">
+                    <div class="user-info__content">
+                        <p><strong>Nombre:</strong> <span id="infoNombre"></span></p>
+                        <p><strong>Correo:</strong> <span id="infoCorreo"></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Formulario de entrada -->
+    <div id="taskSection" class="hidden">
+        <section class="form-section">
+            <div class="card">
+                <h2 class="card__title">Nuevo Mensaje</h2>
+                <form id="messageForm" class="form" novalidate>
+                    <div class="form__group">
+                        <label for="usertarea" class="form__label">
+                            Titulo de la tarea
+                        </label>
+                        <input type="text" id="usertarea" name="usertarea" class="form__input" placeholder="Ingrese el titulo de la tarea" aria-required="true">
+                        <span class="form__error" id="userNameError"></span>
+                    </div>
+                    <div class="form__group">
+                        <label for="userMessage" class="form__label">
+                            Descripcion de la tarea
+                        </label>
+                        <textarea 
+                            id="userMessage" 
+                            name="userMessage"
+                            class="form__input form__textarea" 
+                            placeholder="Escribe la descripcion de tu tarea..."
+                            rows="4"
+                            aria-required="true"
+                        ></textarea>
+                        <span class="form__error" id="userMessageError"></span>
+                    </div>
+                    <div class="form__group">
+                        <label for="taskStatus" class="form__label">
+                            Estado de la tarea
+                        </label>
+                        <select id="taskStatus" name="taskStatus" class="form__input">
+                            <option value="" disabled selected>Selecciona el estado</option>
+                            <option value="En proceso">En proceso</option>
+                            <option value="En listado">En listado</option>
+                            <option value="Terminado">Terminado</option>
+                        </select>
+                        <span class="form__error" id="taskStatusError"></span>
+                    </div>
+                        <div class="form__group">   
+                            <label for="taskPriority" class="form__label">
+                                Prioridad
+                            </label>
+                            <select id="taskPriority" name="taskPriority" class="form__input">
+                                <option value="" disabled selected>Selecciona la prioridad</option>
+                                <option value="Alta">Alta</option>
+                                <option value="Media">Media</option>
+                                <option value="Baja">Baja</option>
+                            </select>
+                            <span class="form__error" id="taskPriorityError"></span>
+                        </div>
+                    <button type="submit" class="btn btn--primary" id="submitBtn">
+                        <span class="btn__text">Agregar Mensaje</span>
+                        <span class="btn__icon">➤</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+        <!-- Área de mensajes -->
+        <section class="messages-section">
+            <div class="messages-header">
+                <h2 class="messages-header__title">Tareas del usuario</h2>
+                <span class="messages-header__count" id="messageCount">0 Tareas</span>
+            </div>
+            <div id="messagesContainer" class="messages-container">
+                <!-- Los mensajes se agregarán aquí dinámicamente --> 
+                <div class="messages-empty" id="emptyState">
+                    <svg class="messages-empty__icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <p class="messages-empty__text">Aún no hay mensajes</p>
+                    <p class="messages-empty__subtext">Completa el formulario para agregar tu primer mensaje</p>
+                </div>
+            </div>
+        </section>
+    </div>
+        <!-- Footer informativo -->
+        <footer class="footer">
+            <p class="footer__text">Ejercicio de manipulación del DOM | SENA - Desarrollo Web</p>
+        </footer>
+
+    <script type="module" src="JS/main.js"></script>
+</body>
+</html>
